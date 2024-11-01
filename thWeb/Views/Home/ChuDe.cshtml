@@ -1,0 +1,20 @@
+﻿@model IEnumerable<thWeb.Models.CHUDE>
+@{
+    ViewBag.Title = "ChuDe";
+
+}
+
+
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+
+            <li>
+                <a href="@Url.Action("CHitiet", "Home", new {id = item.MaCD })">
+                    @item.TenChuDe
+                </a>
+            </li>
+        }
+    </ul>
+</div>

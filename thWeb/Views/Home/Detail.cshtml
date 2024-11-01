@@ -1,0 +1,37 @@
+﻿@model IEnumerable<thWeb.Models.MoTa>
+@{
+    ViewBag.Title = "Detail";
+}
+
+<div>
+    <h1>Thông tin chi tiết sách</h1>
+    @foreach (var sachs in Model.Take(6))
+    {
+
+        <div>
+
+            <div style="display :flex">
+                <div>
+                    <img src="~/Content/img/@sachs.SACH.NHAXUATBAN.TenNXB/@sachs.SACH.TenSach/@sachs.SACH.AnhBia" class="card-img-top" alt="@sachs.SACH.TenSach" style="width: 320px; height: 350px; padding: 20px" />
+                </div>
+
+
+                <div>
+                    <h1 style="color:orange">@sachs.SACH.TenSach </h1>
+                    <h4>@sachs.Mota1</h4>
+                    <h4 style="color:orangered">@sachs.SACH.GiaBan</h4>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    }
+
+
+
+
+    <a href="subpage.html"><img src="~/Content/images/templatemo_ads.jpg" alt="ads" /></a>
+</div> <!-- end of content right -->

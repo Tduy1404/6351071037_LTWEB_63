@@ -1,0 +1,44 @@
+﻿@model IEnumerable<thWeb.Models.MoTa>
+
+@{
+    ViewBag.Title = "ChuDe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/templatemo_style.css" rel="stylesheet" />
+<div id="templatemo_content_right">
+    <h1>
+       Sách theo chủ đề
+    </h1>
+    @foreach (var sachs in Model.Take(6))
+    {
+
+        <div class="templatemo_product_box">
+            <h1>@sachs.SACH.TenSach></h1>
+            <div style="display :flex">
+                <div>
+                    <a href="@Url.Action("Detail", "Home", new {id = sachs.MaSach })">
+                        <img src="~/Content/img/@sachs.SACH.NHAXUATBAN.TenNXB/@sachs.SACH.TenSach/@sachs.SACH.AnhBia" class="card-img-top" alt="@sachs.SACH.TenSach" style="width: 146px; height: 139px;" />
+
+                    </a>
+
+                </div>
+
+
+                <div class="product_info">
+                    <h3>@sachs.SACH.GiaBan</h3>
+                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
+                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
+                </div>
+            </div>
+
+            <div class="cleaner">&nbsp;</div>
+
+        </div>
+
+    }
+
+
+
+
+    <a href="subpage.html"><img src="~/Content/images/templatemo_ads.jpg" alt="ads" /></a>
+</div> <!-- end of content right -->

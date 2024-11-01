@@ -1,0 +1,20 @@
+﻿@model IEnumerable<thWeb.Models.NHAXUATBAN>
+@{
+    ViewBag.Title = "NXB";
+}
+
+
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+
+            <li>
+                <a href="@Url.Action("CHitietXB", "Home", new {id = item.MaNXB })">
+                    @item.TenNXB
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
